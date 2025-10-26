@@ -3,218 +3,505 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nautilus Tech — Innovación y Soluciones Tecnológicas</title>
-  <meta name="description" content="Nautilus Tech: desarrollo de software, automatización y soluciones cloud. Transformamos ideas en productos robustos y escalables." />
-  <meta name="keywords" content="Nautilus Tech, software, automatización, cloud, desarrollo web, data" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://jdarangom2012.github.io/nautilus-tech-site/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Nautilus Tech — Innovación y Soluciones Tecnológicas" />
-  <meta property="og:description" content="Desarrollo de software, automatización y soluciones cloud." />
-  <meta property="og:url" content="https://jdarangom2012.github.io/nautilus-tech-site/" />
-  <meta property="og:image" content="https://jdarangom2012.github.io/nautilus-tech-site/img/LogoNautilusTech.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nautilus Tech — Innovación y Soluciones Tecnológicas" />
-  <meta name="twitter:description" content="Desarrollo de software, automatización y soluciones cloud." />
-  <meta name="twitter:url" content="https://jdarangom2012.github.io/nautilus-tech-site/" />
-
-  <!-- Sitemap hint -->
-  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/tailwind.css" />
-
-  <!-- Slider micro-CSS -->
+  <title>Nautilus Tech — Soluciones MES & Desarrollo de Software</title>
+  <meta name="description" content="Nautilus Tech: Soluciones MES (InduGestor), desarrollo de software, integraciones PLC/SCADA y Data & BI." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#12D6D0',
+            primaryDark: '#0099A7',
+            ocean: '#0EA5E9',
+            deep: '#0B1220',
+            cardSurface: 'rgba(15,23,42,0.4)',     /* fondo tarjetas */
+            cardBorder: 'rgba(255,255,255,0.08)',  /* borde tarjetas */
+            cardHighlight: 'rgba(18,214,208,0.18)' /* leve glow */
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.35)',
+            glass: '0 10px 40px rgba(18,214,208,.12)'
+          },
+          borderRadius: {
+            xl2: '1rem',
+            xl3: '1.25rem'
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"/>
   <style>
-    .hero-slide { opacity: 0; transform: translateY(8px); transition: opacity 500ms ease, transform 500ms ease; position: absolute; inset: 0; }
-    .hero-slide.active { opacity: 1; transform: translateY(0); position: relative; }
-    .hero-slide.inactive-left { opacity: 0; transform: translateX(-12px); }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
+      background-color: #0B1220;
+      color: #fff;
+    }
+
+    /* slider animation states */
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      position: relative;
+    }
+    .hero-slide.inactive-left {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    /* mobile offcanvas menu hidden by default */
+    #mobileMenu.hidden { display: none; }
   </style>
 </head>
+<body class="text-white antialiased">
 
-<body class="bg-deep text-white font-sans">
   <!-- NAV -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-black/40 border-b border-white/10">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Principal">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0B1220]/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 flex h-16 items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <img src="img/LogoNautilusTech.png" alt="Nautilus Tech" class="h-8 w-auto" />
-        <span class="font-display tracking-wide text-primary">Nautilus Tech</span>
+        <span class="inline-block p-2 rounded-2xl bg-gradient-to-br from-primary to-ocean shadow-glass">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3c5.5 0 10 4.5 10 10 0 3.9-3.1 7-7 7-2.8 0-5-2.2-5-5 0-1.7 1.3-3 3-3 1.1 0 2 .9 2 2a2 2 0 1 1-2-2"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="text-lg font-extrabold tracking-tight">Nautilus Tech</span>
       </a>
-      <button id="menuBtn" class="sm:hidden p-2 rounded-md border border-white/15" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
-        <span class="sr-only">Abrir menú</span>☰
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+        <a href="#servicios" class="hover:text-primary transition">Servicios</a>
+        <a href="#tecnologias" class="hover:text-primary transition">Tecnologías</a>
+        <a href="#proyectos" class="hover:text-primary transition">Proyectos</a>
+        <a href="#casos" class="hover:text-primary transition">Casos</a>
+        <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+        <a href="#contacto" class="rounded-xl bg-primary px-4 py-2 font-semibold text-deep hover:bg-primaryDark transition">
+          Ver Demo
+        </a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 hover:bg-white/5">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18"
+                stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </button>
-      <ul class="hidden sm:flex items-center gap-6 text-sm">
-        <li><a class="hover:text-primary" href="#servicios">Servicios</a></li>
-        <li><a class="hover:text-primary" href="#tecnologias">Tecnologías</a></li>
-        <li><a class="hover:text-primary" href="#proyectos">Proyectos</a></li>
-        <li><a class="hover:text-primary" href="#casos">Casos</a></li>
-        <li><a class="btn-primary px-4 py-2 inline-block" href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-    <div id="mobileMenu" class="sm:hidden hidden border-t border-white/10 bg-black/60" role="region" aria-label="Menú móvil">
-      <ul class="px-4 py-3 space-y-2">
-        <li><a class="block py-2" href="#servicios">Servicios</a></li>
-        <li><a class="block py-2" href="#tecnologias">Tecnologías</a></li>
-        <li><a class="block py-2" href="#proyectos">Proyectos</a></li>
-        <li><a class="block py-2" href="#casos">Casos</a></li>
-        <li><a class="block py-2 text-primary" href="#contacto">Contacto</a></li>
-      </ul>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-[#0B1220]/95">
+      <nav class="px-4 py-3 space-y-2 text-sm text-white/80">
+        <a href="#servicios" class="block px-3 py-2 rounded-lg hover:bg-white/5">Servicios</a>
+        <a href="#tecnologias" class="block px-3 py-2 rounded-lg hover:bg-white/5">Tecnologías</a>
+        <a href="#proyectos" class="block px-3 py-2 rounded-lg hover:bg-white/5">Proyectos</a>
+        <a href="#casos" class="block px-3 py-2 rounded-lg hover:bg-white/5">Casos</a>
+        <a href="#contacto" class="block px-3 py-2 rounded-lg hover:bg-white/5">Contacto</a>
+        <a href="#contacto" class="block px-3 py-2 rounded-lg bg-primary text-deep font-semibold hover:bg-primaryDark transition">
+          Ver Demo
+        </a>
+      </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-      <!-- Left: slider text-only -->
-      <div class="relative space-y-6">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight">
-          <span class="hero-slide active">Tecnología que impulsa tu negocio</span>
-          <span class="hero-slide">Automatización y datos para decidir mejor</span>
-          <span class="hero-slide">Experiencias digitales rápidas y seguras</span>
-        </h1>
-        <p class="text-white/75 max-w-prose">Creamos productos y sistemas listos para producción usando prácticas modernas, cloud y datos. De la idea al impacto, sin fricción.</p>
+  <!-- HERO SECTION with SLIDER BLOCK + STATIC CARDS -->
+  <section class="relative overflow-hidden pt-24 pb-8">
+    <!-- background glow blobs -->
+    <div class="absolute inset-0 -z-10 opacity-30 pointer-events-none">
+      <div class="absolute -top-32 -left-24 h-80 w-80 rounded-full bg-primary blur-3xl"></div>
+      <div class="absolute top-10 right-0 h-96 w-[36rem] rounded-full bg-ocean blur-3xl"></div>
+    </div>
 
-        <div class="flex items-center gap-3">
-          <button id="prevSlide" class="btn-outline px-3 py-2">Prev</button>
-          <div class="flex items-center gap-2">
-            <button class="indicator w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-primary" aria-label="Slide 1"></button>
-            <button class="indicator w-2.5 h-2.5 rounded-full bg-white/30 ring-2 ring-transparent" aria-label="Slide 2"></button>
-            <button class="indicator w-2.5 h-2.5 rounded-full bg-white/30 ring-2 ring-transparent" aria-label="Slide 3"></button>
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="grid lg:grid-cols-2 gap-6 items-start">
+        <!-- LEFT SIDE: slider text -->
+        <div class="relative min-h-[220px]">
+          <!-- Slide 1: InduGestor -->
+          <div class="hero-slide active" data-slide="0">
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1a253a] px-3 py-1 text-xs text-white/80 shadow-soft">
+              <span class="h-2 w-2 rounded-full bg-primary"></span>
+              Plataforma MES & Desarrollo de Software
+            </span>
+
+            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+              Potencia tu fábrica con
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-ocean">
+                InduGestor
+              </span>
+              y desarrollo a la medida
+            </h1>
+
+            <p class="mt-4 text-white/80 text-lg leading-relaxed">
+              Integramos PLC/SCADA, diseñamos terminales de piso y portales web con analítica
+              para llevar tu operación a nivel <em>Industria 4.0.</em>
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#contacto"
+                 class="rounded-xl bg-primary px-5 py-3 text-deep font-semibold hover:bg-primaryDark transition shadow-soft">
+                Ver Demo
+              </a>
+              <a href="#servicios"
+                 class="rounded-xl border border-white/15 bg-transparent px-5 py-3 text-white hover:bg-white/5 transition">
+                Ver servicios
+              </a>
+            </div>
           </div>
-          <button id="nextSlide" class="btn-outline px-3 py-2">Next</button>
-        </div>
-        <div class="flex gap-3">
-          <a href="#contacto" class="rounded-xl bg-primary text-deep font-semibold hover:bg-primaryDark transition px-5 py-3">Hablemos</a>
-          <a href="#servicios" class="rounded-xl border border-white/15 bg-transparent text-white hover:bg-white/5 transition px-5 py-3">Ver servicios</a>
-        </div>
-      </div>
 
-      <!-- Right: static cards -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold">Desarrollo Web</h3>
-          <p class="text-sm text-white/70">SPA, SSR, APIs y PWAs con rendimiento real.</p>
+          <!-- Slide 2: AutoInventory -->
+          <div class="hero-slide" data-slide="1">
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1a253a] px-3 py-1 text-xs text-white/80 shadow-soft">
+              <span class="h-2 w-2 rounded-full bg-primary"></span>
+              Plataforma de Gestión Vehicular
+            </span>
+
+            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+              Simplifica la gestión de vehículos con
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-ocean">
+                AutoInventory
+              </span>
+            </h1>
+
+            <p class="mt-4 text-white/80 text-lg leading-relaxed">
+              Controla inventario, clientes y procesos de venta desde una plataforma moderna y
+              escalable para concesionarios y talleres.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#contacto"
+                 class="rounded-xl bg-primary px-5 py-3 text-deep font-semibold hover:bg-primaryDark transition shadow-soft">
+                Ver Demo
+              </a>
+              <a href="#proyectos"
+                 class="rounded-xl border border-white/15 bg-transparent px-5 py-3 text-white hover:bg-white/5 transition">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+
+          <!-- slider controls -->
+          <div class="mt-6 flex items-center gap-3 text-xs text-white/60 select-none">
+            <button id="prevSlide"
+              class="rounded-lg border border-white/20 bg-white/5 px-2 py-1 hover:bg-white/10 transition"
+              aria-label="Anterior">
+              ❮
+            </button>
+            <button id="nextSlide"
+              class="rounded-lg border border-white/20 bg-white/5 px-2 py-1 hover:bg-white/10 transition"
+              aria-label="Siguiente">
+              ❯
+            </button>
+
+            <div class="flex items-center gap-2 ml-4">
+              <span class="indicator block h-2 w-2 rounded-full bg-white/30 ring-2 ring-transparent"></span>
+              <span class="indicator block h-2 w-2 rounded-full bg-white/30 ring-2 ring-transparent"></span>
+            </div>
+          </div>
         </div>
-        <div class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold">Cloud & DevOps</h3>
-          <p class="text-sm text-white/70">Infra reproducible, CI/CD y observabilidad.</p>
+
+        <!-- RIGHT SIDE: static feature cards -->
+        <div class="rounded-xl3 border border-cardBorder bg-cardSurface/60 shadow-soft backdrop-blur-sm p-4 sm:p-5 lg:ml-auto lg:max-w-[420px] w-full">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
+              <h3 class="font-semibold text-white">Terminal de Piso</h3>
+              <p class="text-sm text-white/70 mt-1 leading-relaxed">
+                .NET MAUI / Blazor Hybrid con login, órdenes y trazabilidad.
+              </p>
+            </div>
+
+            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
+              <h3 class="font-semibold text-white">Portal Admin</h3>
+              <p class="text-sm text-white/70 mt-1 leading-relaxed">
+                Django + Tailwind para catálogos, KPIs y auditoría.
+              </p>
+            </div>
+
+            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
+              <h3 class="font-semibold text-white">Conectores PLC con protocolo de comunicación</h3>
+              <p class="text-sm text-white/70 mt-1 leading-relaxed">
+                Python (pymcprotocol / pylogix)
+              </p>
+            </div>
+
+            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
+              <h3 class="font-semibold text-white">Analytics & BI</h3>
+              <p class="text-sm text-white/70 mt-1 leading-relaxed">
+                Dashboards de calidad, consumo y OEE.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold">Automatización</h3>
-          <p class="text-sm text-white/70">Bots, RPA y pipelines de datos.</p>
+      </div> <!-- grid -->
+    </div> <!-- container -->
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-xl font-semibold text-white mb-4">Servicios</h2>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm leading-relaxed">
+        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
+          <div class="font-semibold text-white">MES — InduGestor</div>
+          <p class="text-white/70 mt-2">
+            Ejecución de Manufactura modular, terminales de piso, trazabilidad, parámetros de calidad y
+            sincronización nube.
+          </p>
         </div>
-        <div class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold">Consultoría</h3>
-          <p class="text-sm text-white/70">Arquitectura, seguridad y performance.</p>
+        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
+          <div class="font-semibold text-white">Software a medida</div>
+          <p class="text-white/70 mt-2">
+            Backends Django, Tailwind, PostgreSQL y .NET MAUI para apps robustas, seguras y escalables.
+          </p>
+        </div>
+        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
+          <div class="font-semibold text-white">Integraciones OT/IT</div>
+          <p class="text-white/70 mt-2">
+            Lectura de tags por medio de I/O server para análisis de datos en Power BI.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
-  <section id="servicios" class="py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Servicios</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold mb-1">Productos a la medida</h3>
-          <p class="text-white/70 text-sm">Desde el prototipo al lanzamiento, end-to-end.</p>
-        </article>
-        <article class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold mb-1">Integraciones y APIs</h3>
-          <p class="text-white/70 text-sm">Servicios conectados y seguros.</p>
-        </article>
-        <article class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold mb-1">Data & Analytics</h3>
-          <p class="text-white/70 text-sm">Captura, modelado y visualización.</p>
-        </article>
+  <!-- TECNOLOGÍAS -->
+  <section id="tecnologias" class="py-10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-xl font-semibold text-white mb-4">Tecnologías</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 text-xs">
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">Django</span>
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">TailwindCSS</span>
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">PostgreSQL</span>
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">.NET MAUI</span>
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">Microsoft Power BI</span>
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">Python</span>
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">React JS</span>
       </div>
     </div>
   </section>
 
-  <!-- Tecnologías -->
-  <section id="tecnologias" class="py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Tecnologías</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center text-white/80">
-  <div class="rounded-xl p-3 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">JavaScript</div>
-  <div class="rounded-xl p-3 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">TypeScript</div>
-  <div class="rounded-xl p-3 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">Node.js</div>
-  <div class="rounded-xl p-3 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">Python</div>
-  <div class="rounded-xl p-3 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">AWS</div>
-  <div class="rounded-xl p-3 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">Docker</div>
+  <!-- PROYECTOS DESTACADOS -->
+  <section id="proyectos" class="py-10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-xl font-semibold text-white mb-4">Proyectos destacados</h2>
+      <p class="text-white/70 text-sm mb-4">
+        Repositorios en GitHub creado por Nautilus Tech.
+      </p>
+
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm leading-relaxed">
+        <a href="https://github.com/jdarangom2012/AutoInventory-" target="_blank"
+           class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft hover:border-primary hover:shadow-glass transition">
+          <div class="text-primary font-semibold">AutoInventory</div>
+          <p class="text-white/70 mt-2">
+            Sistema de control de inventario y registro de compra/venta de vehículos.
+          </p>
+          <div class="text-xs text-white/60 mt-3">Ver en GitHub ↗</div>
+        </a>
+
+        <a href="https://github.com/jdarangom2012/minimarket-django" target="_blank"
+           class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft hover:border-primary hover:shadow-glass transition">
+          <div class="text-primary font-semibold">Minimarket Django</div>
+          <p class="text-white/70 mt-2">
+            Punto de venta (POS) con Django, control de stock y reportes.
+          </p>
+          <div class="text-xs text-white/60 mt-3">Ver en GitHub ↗</div>
+        </a>
+
+        <a href="https://github.com/jdarangom2012/MesTostadoraLa-Central" target="_blank"
+           class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft hover:border-primary hover:shadow-glass transition">
+          <div class="text-primary font-semibold">MES Tostadora La Central</div>
+          <p class="text-white/70 mt-2">
+            Implementación MES real con lectura PLC, control de tueste y reportes SQL.
+          </p>
+          <div class="text-xs text-white/60 mt-3">Ver en GitHub ↗</div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Proyectos -->
-  <section id="proyectos" class="py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Proyectos</h2>
-      <div class="grid sm:grid-cols-2 gap-6">
-        <article class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold">Portal de clientes</h3>
-          <p class="text-white/70 text-sm">Autenticación, pagos y notificaciones.</p>
-        </article>
-        <article class="rounded-2xl p-5 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">
-          <h3 class="font-semibold">Pipeline de datos</h3>
-          <p class="text-white/70 text-sm">Ingesta y dashboards operativos.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+  <!-- CASOS DE ÉXITO -->
+  <section id="casos" class="py-10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-xl font-semibold text-white mb-4">Casos de éxito</h2>
 
-  <!-- Casos -->
-  <section id="casos" class="py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Casos de éxito</h2>
-      <div class="grid sm:grid-cols-3 gap-6">
-  <div class="rounded-2xl p-5 text-sm border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">+40% performance en e-commerce</div>
-  <div class="rounded-2xl p-5 text-sm border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">Automatización de reportes (2h→5min)</div>
-  <div class="rounded-2xl p-5 text-sm border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm">Reducción de costos en cloud 25%</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="py-16 sm:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-6">Contacto</h2>
-  <form id="contactForm" class="rounded-2xl p-6 space-y-4 border border-white/15 bg-\[\#0F172A\]/60 shadow-soft backdrop-blur-sm" method="POST" action="https://formspree.io/f/xxxxxx" data-use-netlify="false" netlify netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contacto" />
-        <p class="hidden"><label>¿Eres humano? <input name="bot-field" /></label></p>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <label class="block text-sm">Nombre
-            <input required name="nombre" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-3 py-2" />
-          </label>
-          <label class="block text-sm">Email
-            <input required type="email" name="email" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-3 py-2" />
-          </label>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm leading-relaxed">
+        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
+          <div class="font-semibold text-white">Planta Alimentos</div>
+          <p class="text-white/70 mt-2">
+            Control de producción y reducción de desperdicios.
+          </p>
         </div>
-        <label class="block text-sm">Mensaje
-          <textarea required name="mensaje" rows="4" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-3 py-2"></textarea>
-        </label>
-        <div class="flex gap-3 items-center">
-          <button type="submit" class="rounded-xl bg-primary text-deep font-semibold hover:bg-primaryDark transition px-5 py-3">Enviar</button>
-          <a class="rounded-xl border border-white/15 bg-transparent text-white hover:bg-white/5 transition px-5 py-3" href="https://wa.me/573232341566" target="_blank" rel="noopener">WhatsApp directo</a>
-          <span id="formMsg" class="text-sm text-white/80"></span>
+
+        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
+          <div class="font-semibold text-white">Tostadora Café</div>
+          <p class="text-white/70 mt-2">
+            Curvas de tueste registradas automáticamente desde PLC.
+          </p>
         </div>
+
+        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
+          <div class="font-semibold text-white">Bebidas</div>
+          <p class="text-white/70 mt-2">
+            Integración SCADA–Postgres para control en tiempo real.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-10">
+    <div class="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-xl font-semibold text-white mb-4">Conversemos</h2>
+        <p class="text-white/70 text-sm">
+          Cuéntanos tu caso y agenda una demo de InduGestor.
+        </p>
+        <ul class="mt-6 text-white/80 text-sm space-y-2">
+          <li>📧 contacto@nautilustech.co</li>
+          <li>🌐 www.nautilustech.co</li>
+          <li>📍 Medellín, Colombia</li>
+        </ul>
+      </div>
+
+      <form class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft text-sm">
+        <input type="text" placeholder="Tu nombre"
+               class="w-full mb-3 rounded-md border border-white/20 bg-transparent px-3 py-2 text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+        <input type="email" placeholder="Correo electrónico"
+               class="w-full mb-3 rounded-md border border-white/20 bg-transparent px-3 py-2 text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+        <textarea rows="4" placeholder="Cuéntanos sobre tu proyecto..."
+                  class="w-full mb-3 rounded-md border border-white/20 bg-transparent px-3 py-2 text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none"></textarea>
+        <button
+          class="w-full rounded-md bg-primary px-5 py-2.5 text-deep font-semibold hover:bg-primaryDark transition">
+          Enviar
+        </button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-8 text-center text-white/70">
-    <p>© <span id="year"></span> Nautilus Tech — Todos los derechos reservados</p>
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-10 text-xs text-white/60">
+    <div class="mx-auto max-w-7xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 font-semibold text-white">
+        <span class="inline-block p-1.5 rounded-xl bg-gradient-to-br from-primary to-ocean">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3c5.5 0 10 4.5 10 10 0 3.9-3.1 7-7 7-2.8 0-5-2.2-5-5 0-1.7 1.3-3 3-3 1.1 0 2 .9 2 2"
+                  stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Nautilus Tech</span>
+      </div>
+      <p>© <span id="year"></span> Nautilus Tech. Todos los derechos reservados.</p>
+      <div>Hecho con Django + Tailwind + Postgres</div>
+    </div>
   </footer>
 
-  <!-- Scripts: primero redirect (https), luego app -->
-  <script src="js/redirect.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <!-- SCRIPTS -->
+  <script>
+    // mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // footer year
+    const yEl = document.getElementById('year');
+    if (yEl) { yEl.textContent = new Date().getFullYear(); }
+
+    // HERO SLIDER LOGIC
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.indicator');
+
+    let currentSlide = 0;
+    let slideInterval = null;
+    const SLIDE_TIME = 6000; // ms
+
+    function setActiveSlide(index) {
+      heroSlides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+          slide.classList.remove('inactive-left');
+        } else {
+          // decide direction for exit animation
+          if (i < index) {
+            slide.classList.remove('active');
+            slide.classList.add('inactive-left');
+          } else {
+            slide.classList.remove('active','inactive-left');
+          }
+        }
+      });
+
+      indicators.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.add('bg-primary', 'ring-primary');
+          dot.classList.remove('bg-white/30', 'ring-transparent');
+        } else {
+          dot.classList.remove('bg-primary', 'ring-primary');
+          dot.classList.add('bg-white/30', 'ring-transparent');
+        }
+      });
+
+      currentSlide = index;
+    }
+
+    function nextHeroSlide() {
+      const next = (currentSlide + 1) % heroSlides.length;
+      setActiveSlide(next);
+    }
+
+    function prevHeroSlide() {
+      const prev = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+      setActiveSlide(prev);
+    }
+
+    function startAuto() {
+      stopAuto();
+      slideInterval = setInterval(nextHeroSlide, SLIDE_TIME);
+    }
+
+    function stopAuto() {
+      if (slideInterval) clearInterval(slideInterval);
+    }
+
+    // hook buttons
+    const nextBtn = document.getElementById('nextSlide');
+    const prevBtn = document.getElementById('prevSlide');
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextHeroSlide();
+        startAuto();
+      });
+    }
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevHeroSlide();
+        startAuto();
+      });
+    }
+
+    // hook indicators click
+    indicators.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        setActiveSlide(i);
+        startAuto();
+      });
+    });
+
+    // init
+    setActiveSlide(0);
+    startAuto();
+  </script>
 </body>
 </html>

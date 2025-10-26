@@ -1,0 +1,37 @@
+/* Estilos mínimos para recuperar el diseño original (glassmorphism y botones)
+   Estos estilos no dependen de @apply para evitar problemas de compilación en Pages */
+
+/* Tarjetas tipo vidrio */
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(15, 23, 42, 0.60); /* slate-900 ~ #0F172A con 60% */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+/* Botón primario */
+.btn-primary {
+  border-radius: 0.75rem; /* rounded-xl */
+  background-color: #12D6D0;
+  color: #0B1220; /* deep */
+  font-weight: 600;
+  transition: background-color 150ms ease;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background-color: #0099A7; /* primaryDark */
+}
+
+/* Botón contorno */
+.btn-outline {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #ffffff;
+  transition: background-color 150ms ease, color 150ms ease;
+  display: inline-block;
+}
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
