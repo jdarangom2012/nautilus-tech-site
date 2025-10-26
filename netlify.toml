@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "."
+
+# Cache largo para CSS generado
+[[headers]]
+  for = "/css/tailwind.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

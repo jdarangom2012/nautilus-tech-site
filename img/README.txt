@@ -1,0 +1,1 @@
+Coloca aquí el archivo del logotipo oficial como "LogoNautilusTech.png" (optimizado y con fondo transparente si aplica). Tamaño sugerido: 256x256 o SVG. Rutas en el sitio: img/LogoNautilusTech.png.

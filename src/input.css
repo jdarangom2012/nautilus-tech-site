@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global body styles via utilities preferred; minimal custom CSS here */
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-deep text-white antialiased font-sans; }
+}
+
+@layer components {
+  .glass-card { @apply border border-cardBorder bg-cardSurface/60 shadow-soft backdrop-blur-sm; }
+  .btn-primary { @apply rounded-xl bg-primary text-deep font-semibold hover:bg-primaryDark transition; }
+  .btn-outline { @apply rounded-xl border border-white/15 bg-transparent text-white hover:bg-white/5 transition; }
+}
