@@ -1,14 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/index.html" />
-    <script>
-      window.location.replace('/index.html');
-    </script>
-    <title>Redirigiendo…</title>
-  </head>
-  <body>
-    <p>Redirigiendo a la página principal… Si no ocurre automáticamente, <a href="/index.html">haz clic aquí</a>.</p>
-  </body>
-  </html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nautilus Tech — Innovación y Soluciones Tecnológicas</title>
+  <meta name="description" content="Nautilus Tech: desarrollo de software, automatización y soluciones cloud. Transformamos ideas en productos robustos y escalables." />
+  <meta name="keywords" content="Nautilus Tech, software, automatización, cloud, desarrollo web, data" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://jdarangom2012.github.io/nautilus-tech-site/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nautilus Tech — Innovación y Soluciones Tecnológicas" />
+  <meta property="og:description" content="Desarrollo de software, automatización y soluciones cloud." />
+  <meta property="og:url" content="https://jdarangom2012.github.io/nautilus-tech-site/" />
+  <meta property="og:image" content="https://jdarangom2012.github.io/nautilus-tech-site/img/LogoNautilusTech.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nautilus Tech — Innovación y Soluciones Tecnológicas" />
+  <meta name="twitter:description" content="Desarrollo de software, automatización y soluciones cloud." />
+  <meta name="twitter:url" content="https://jdarangom2012.github.io/nautilus-tech-site/" />
+
+  <!-- Sitemap hint -->
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tailwind.css" />
+
+  <!-- Slider micro-CSS -->
+  <style>
+    .hero-slide { opacity: 0; transform: translateY(8px); transition: opacity 500ms ease, transform 500ms ease; position: absolute; inset: 0; }
+    .hero-slide.active { opacity: 1; transform: translateY(0); position: relative; }
+    .hero-slide.inactive-left { opacity: 0; transform: translateX(-12px); }
+  </style>
+</head>
+
+<body class="bg-deep text-white font-sans">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-black/40 border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Principal">
+      <a href="#" class="flex items-center gap-3">
+        <img src="img/LogoNautilusTech.png" alt="Nautilus Tech" class="h-8 w-auto" />
+        <span class="font-display tracking-wide text-primary">Nautilus Tech</span>
+      </a>
+      <button id="menuBtn" class="sm:hidden p-2 rounded-md border border-white/15" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+        <span class="sr-only">Abrir menú</span>☰
+      </button>
+      <ul class="hidden sm:flex items-center gap-6 text-sm">
+        <li><a class="hover:text-primary" href="#servicios">Servicios</a></li>
+        <li><a class="hover:text-primary" href="#tecnologias">Tecnologías</a></li>
+        <li><a class="hover:text-primary" href="#proyectos">Proyectos</a></li>
+        <li><a class="hover:text-primary" href="#casos">Casos</a></li>
+        <li><a class="btn-primary px-4 py-2 inline-block" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div id="mobileMenu" class="sm:hidden hidden border-t border-white/10 bg-black/60" role="region" aria-label="Menú móvil">
+      <ul class="px-4 py-3 space-y-2">
+        <li><a class="block py-2" href="#servicios">Servicios</a></li>
+        <li><a class="block py-2" href="#tecnologias">Tecnologías</a></li>
+        <li><a class="block py-2" href="#proyectos">Proyectos</a></li>
+        <li><a class="block py-2" href="#casos">Casos</a></li>
+        <li><a class="block py-2 text-primary" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <!-- Left: slider text-only -->
+      <div class="relative space-y-6">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight">
+          <span class="hero-slide active">Tecnología que impulsa tu negocio</span>
+          <span class="hero-slide">Automatización y datos para decidir mejor</span>
+          <span class="hero-slide">Experiencias digitales rápidas y seguras</span>
+        </h1>
+        <p class="text-white/75 max-w-prose">Creamos productos y sistemas listos para producción usando prácticas modernas, cloud y datos. De la idea al impacto, sin fricción.</p>
+
+        <div class="flex items-center gap-3">
+          <button id="prevSlide" class="btn-outline px-3 py-2">Prev</button>
+          <div class="flex items-center gap-2">
+            <button class="indicator w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-primary" aria-label="Slide 1"></button>
+            <button class="indicator w-2.5 h-2.5 rounded-full bg-white/30 ring-2 ring-transparent" aria-label="Slide 2"></button>
+            <button class="indicator w-2.5 h-2.5 rounded-full bg-white/30 ring-2 ring-transparent" aria-label="Slide 3"></button>
+          </div>
+          <button id="nextSlide" class="btn-outline px-3 py-2">Next</button>
+        </div>
+        <div class="flex gap-3">
+          <a href="#contacto" class="btn-primary px-5 py-3">Hablemos</a>
+          <a href="#servicios" class="btn-outline px-5 py-3">Ver servicios</a>
+        </div>
+      </div>
+
+      <!-- Right: static cards -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold">Desarrollo Web</h3>
+          <p class="text-sm text-white/70">SPA, SSR, APIs y PWAs con rendimiento real.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold">Cloud & DevOps</h3>
+          <p class="text-sm text-white/70">Infra reproducible, CI/CD y observabilidad.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold">Automatización</h3>
+          <p class="text-sm text-white/70">Bots, RPA y pipelines de datos.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold">Consultoría</h3>
+          <p class="text-sm text-white/70">Arquitectura, seguridad y performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Servicios</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold mb-1">Productos a la medida</h3>
+          <p class="text-white/70 text-sm">Desde el prototipo al lanzamiento, end-to-end.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold mb-1">Integraciones y APIs</h3>
+          <p class="text-white/70 text-sm">Servicios conectados y seguros.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold mb-1">Data & Analytics</h3>
+          <p class="text-white/70 text-sm">Captura, modelado y visualización.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tecnologías -->
+  <section id="tecnologias" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Tecnologías</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center text-white/80">
+        <div class="glass-card rounded-xl p-3">JavaScript</div>
+        <div class="glass-card rounded-xl p-3">TypeScript</div>
+        <div class="glass-card rounded-xl p-3">Node.js</div>
+        <div class="glass-card rounded-xl p-3">Python</div>
+        <div class="glass-card rounded-xl p-3">AWS</div>
+        <div class="glass-card rounded-xl p-3">Docker</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Proyectos</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold">Portal de clientes</h3>
+          <p class="text-white/70 text-sm">Autenticación, pagos y notificaciones.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-5">
+          <h3 class="font-semibold">Pipeline de datos</h3>
+          <p class="text-white/70 text-sm">Ingesta y dashboards operativos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos -->
+  <section id="casos" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-8">Casos de éxito</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-5 text-sm">+40% performance en e-commerce</div>
+        <div class="glass-card rounded-2xl p-5 text-sm">Automatización de reportes (2h→5min)</div>
+        <div class="glass-card rounded-2xl p-5 text-sm">Reducción de costos en cloud 25%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-16 sm:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold mb-6">Contacto</h2>
+      <form id="contactForm" class="glass-card rounded-2xl p-6 space-y-4" method="POST" action="https://formspree.io/f/xxxxxx" data-use-netlify="false" netlify netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contacto" />
+        <p class="hidden"><label>¿Eres humano? <input name="bot-field" /></label></p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="block text-sm">Nombre
+            <input required name="nombre" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-3 py-2" />
+          </label>
+          <label class="block text-sm">Email
+            <input required type="email" name="email" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-3 py-2" />
+          </label>
+        </div>
+        <label class="block text-sm">Mensaje
+          <textarea required name="mensaje" rows="4" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-3 py-2"></textarea>
+        </label>
+        <div class="flex gap-3 items-center">
+          <button type="submit" class="btn-primary px-5 py-3">Enviar</button>
+          <a class="btn-outline px-5 py-3" href="https://wa.me/573232341566" target="_blank" rel="noopener">WhatsApp directo</a>
+          <span id="formMsg" class="text-sm text-white/80"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-8 text-center text-white/70">
+    <p>© <span id="year"></span> Nautilus Tech — Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts: primero redirect (https), luego app -->
+  <script src="js/redirect.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
