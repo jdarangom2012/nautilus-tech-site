@@ -12,7 +12,8 @@ module.exports = {
         primaryDark: '#0099A7',
         ocean: '#0EA5E9',
         deep: '#0B1220',
-        cardSurface: 'rgba(15,23,42,0.4)',
+        // usar color base en HEX para permitir modificadores como /60
+        cardSurface: '#0F172A',
         cardBorder: 'rgba(255,255,255,0.08)',
         cardHighlight: 'rgba(18,214,208,0.18)'
       },
