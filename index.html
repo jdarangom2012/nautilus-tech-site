@@ -3,305 +3,159 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nautilus Tech — Soluciones MES & Desarrollo de Software</title>
-  <meta name="description" content="Nautilus Tech: Soluciones MES (InduGestor), desarrollo de software, integraciones PLC/SCADA y Data & BI." />
+  <title>Nautilus Tech 🌊 | Innovación y Tecnología Industrial 4.0</title>
 
-  <!-- 🌊 Nautilus Tech — SEO & Open Graph -->
-  <meta name="title" content="Nautilus Tech — Soluciones MES, Industria 4.0 y Software Industrial Inteligente">
-  <meta name="description" content="Impulsamos la transformación digital en la industria con InduGestor y AutoInventory. Soluciones MES, integración PLC/SCADA y analítica con Power BI.">
-  <meta name="keywords" content="Nautilus Tech, MES, Industria 4.0, InduGestor, AutoInventory, Software Industrial, Power BI, Automatización, SCADA, Python, Tailwind, Postgres">
+  <!-- SEO -->
+  <meta name="description" content="Nautilus Tech impulsa la transformación digital industrial con soluciones MES, automatización y analítica avanzada. Desde Medellín, conectamos planta, nube y datos en tiempo real.">
+  <meta name="keywords" content="Nautilus Tech, InduGestor, AutoInventory, GlamFlow, Minimarket, MES Tostadora, Industria 4.0, MES, automatización, SCADA, PLC, Python, Django, Power BI, Tailwind, Postgres">
   <meta name="author" content="Nautilus Tech">
 
-  <!-- ✅ Open Graph -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jdarangom2012.github.io/nautilus-tech-site/">
-  <meta property="og:title" content="Nautilus Tech — Soluciones MES & Desarrollo de Software Industrial">
-  <meta property="og:description" content="InduGestor y AutoInventory: plataformas que integran tu fábrica con tecnología MES, analítica y automatización.">
-  <!-- Nota: Usamos temporalmente el PNG existente hasta contar con og-card-nautilus-tech.jpg -->
-  <meta property="og:image" content="https://jdarangom2012.github.io/nautilus-tech-site/img/LogoNautilusTech.png">
+  <meta property="og:url" content="https://nautilustech.co/">
+  <meta property="og:title" content="Nautilus Tech 🌊 | Transformación Digital Industrial">
+  <meta property="og:description" content="Desarrollamos soluciones MES, automatización e inteligencia de datos para la industria. Conoce InduGestor, AutoInventory, GlamFlow y más.">
+  <meta property="og:image" content="https://nautilustech.co/img/og-logo-nautilus.png">
   <meta property="og:site_name" content="Nautilus Tech">
 
-  <!-- 🐦 Twitter -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nautilus Tech — Soluciones MES & Desarrollo de Software Industrial">
-  <meta name="twitter:description" content="Soluciones inteligentes en Industria 4.0, MES, software industrial y Power BI.">
-  <meta name="twitter:image" content="https://jdarangom2012.github.io/nautilus-tech-site/img/LogoNautilusTech.png">
+  <meta name="twitter:title" content="Nautilus Tech 🌊 | Transformación Digital Industrial">
+  <meta name="twitter:description" content="Soluciones industriales, MES, software e integración planta–nube.">
+  <meta name="twitter:image" content="https://nautilustech.co/img/og-logo-nautilus.png">
 
-  <!-- 🔎 SEO -->
-  <link rel="canonical" href="https://jdarangom2012.github.io/nautilus-tech-site/">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://nautilustech.co/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0B1220">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             primary: '#12D6D0',
-            primaryDark: '#0099A7',
             ocean: '#0EA5E9',
             deep: '#0B1220',
-            cardSurface: 'rgba(15,23,42,0.4)',     /* fondo tarjetas */
-            cardBorder: 'rgba(255,255,255,0.08)',  /* borde tarjetas */
-            cardHighlight: 'rgba(18,214,208,0.18)' /* leve glow */
           },
           boxShadow: {
             soft: '0 10px 30px rgba(0,0,0,.35)',
             glass: '0 10px 40px rgba(18,214,208,.12)'
-          },
-          borderRadius: {
-            xl2: '1rem',
-            xl3: '1.25rem'
           }
         }
       }
     };
   </script>
+
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
-      --font-title: 'Orbitron', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
-    }
 
+  <style>
     body {
-      font-family: var(--font-sans);
+      font-family: 'Inter', sans-serif;
       background-color: #0B1220;
       color: #fff;
     }
-
-    /* Typography: Orbitron for titles, headers and menus */
     h1, h2, h3, h4, h5, h6,
-    header nav a,
-    #mobileMenu a,
-    .brand-title {
-      font-family: var(--font-title);
-      letter-spacing: .02em;
+    header nav a {
+      font-family: 'Orbitron', sans-serif;
     }
-
-    /* slider animation states */
-    .hero-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .hero-slide.active {
-      opacity: 1;
-      transform: translateX(0);
-      position: relative;
-    }
-    .hero-slide.inactive-left {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-
-    /* mobile offcanvas menu hidden by default */
     #mobileMenu.hidden { display: none; }
+    @keyframes fade-in { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+    .animate-fade-in { animation: fade-in 0.25s ease-out; }
+
+    /* Evita que el botón flotante tape el texto del footer */
+footer {
+  padding-right: 90px; /* deja espacio visual a la derecha del texto */
+}
+@media (max-width: 640px) {
+  footer {
+    padding-right: 0; /* en móviles vuelve al padding normal */
+    padding-bottom: 80px; /* da aire para el botón */
+  }
+}
   </style>
 </head>
 <body class="text-white antialiased">
 
-  <!-- NAV -->
+  <!-- HEADER -->
   <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0B1220]/80 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-4 flex h-16 items-center justify-between">
+    <div class="mx-auto w-[95%] px-4 flex h-16 items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <img src="./img/LogoNautilusTech.png" alt="Nautilus Tech" class="h-8 w-auto rounded-xl shadow-glass" />
-        <span class="text-lg font-extrabold tracking-tight brand-title">Nautilus Tech</span>
+        <img src="./img/LogoNautilusTech.png" alt="Logo Nautilus Tech - Innovación Industrial" class="h-8 w-auto rounded-xl shadow-glass" />
+        <span class="text-lg font-extrabold tracking-tight">Nautilus Tech</span>
       </a>
-
       <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
         <a href="#servicios" class="hover:text-primary transition">Servicios</a>
         <a href="#tecnologias" class="hover:text-primary transition">Tecnologías</a>
         <a href="#proyectos" class="hover:text-primary transition">Proyectos</a>
-        <a href="#casos" class="hover:text-primary transition">Casos</a>
-        <a href="#contacto" class="hover:text-primary transition">Contacto</a>
-        <a href="#contacto" class="rounded-xl bg-primary px-4 py-2 font-semibold text-deep hover:bg-primaryDark transition">
-          Ver Demo
-        </a>
+        <a href="#contacto" class="rounded-xl bg-primary px-4 py-2 font-semibold text-deep hover:bg-[#0FBFB9] transition">Contacto</a>
       </nav>
-
       <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 hover:bg-white/5">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path d="M3 6h18M3 12h18M3 18h18"
-                stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
     </div>
-
-    <!-- mobile menu -->
+    <!-- MENÚ MÓVIL -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-[#0B1220]/95">
       <nav class="px-4 py-3 space-y-2 text-sm text-white/80">
         <a href="#servicios" class="block px-3 py-2 rounded-lg hover:bg-white/5">Servicios</a>
         <a href="#tecnologias" class="block px-3 py-2 rounded-lg hover:bg-white/5">Tecnologías</a>
         <a href="#proyectos" class="block px-3 py-2 rounded-lg hover:bg-white/5">Proyectos</a>
-        <a href="#casos" class="block px-3 py-2 rounded-lg hover:bg-white/5">Casos</a>
-        <a href="#contacto" class="block px-3 py-2 rounded-lg hover:bg-white/5">Contacto</a>
-        <a href="#contacto" class="block px-3 py-2 rounded-lg bg-primary text-deep font-semibold hover:bg-primaryDark transition">
-          Ver Demo
-        </a>
+        <a href="#contacto" class="block px-3 py-2 rounded-lg bg-primary text-deep font-semibold hover:bg-[#0FBFB9] transition">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION with SLIDER BLOCK + STATIC CARDS -->
-  <section class="relative overflow-hidden pt-24 pb-8">
-    <!-- background glow blobs -->
-    <div class="absolute inset-0 -z-10 opacity-30 pointer-events-none">
-      <div class="absolute -top-32 -left-24 h-80 w-80 rounded-full bg-primary blur-3xl"></div>
-      <div class="absolute top-10 right-0 h-96 w-[36rem] rounded-full bg-ocean blur-3xl"></div>
-    </div>
+  <!-- HERO -->
+<section class="pt-24 pb-10 text-center relative overflow-hidden">
+  <!-- fondos decorativos -->
+  <div class="absolute inset-0 -z-10 opacity-25 pointer-events-none">
+    <div class="absolute -top-32 -left-24 h-80 w-80 rounded-full bg-primary blur-3xl"></div>
+    <div class="absolute top-10 right-0 h-96 w-[36rem] rounded-full bg-ocean blur-3xl"></div>
+  </div>
 
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="grid lg:grid-cols-2 gap-6 items-start">
-        <!-- LEFT SIDE: slider text -->
-        <div class="relative min-h-[220px]">
-          <!-- Slide 1: InduGestor -->
-          <div class="hero-slide active" data-slide="0">
-            <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1a253a] px-3 py-1 text-xs text-white/80 shadow-soft">
-              <span class="h-2 w-2 rounded-full bg-primary"></span>
-              Plataforma MES & Desarrollo de Software
-            </span>
+  <div class="mx-auto max-w-4xl px-6 animate-fade-in">
+    <h1 class="text-5xl font-extrabold text-white leading-tight mb-4">
+      Transformamos la industria con tecnología inteligente
+      <span class="text-[#12D6D0]">de Nautilus Tech</span>
+    </h1>
+    <p class="text-white/80 text-lg mb-6">
+      Soluciones MES, automatización y sistemas digitales diseñados por Nautilus Tech.
+    </p>
+    <a href="#contacto"
+       class="rounded-xl bg-primary px-6 py-3 text-deep font-semibold hover:bg-[#0FBFB9] transition">
+      Contáctanos
+    </a>
+  </div>
+</section>
 
-            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-              Potencia tu fábrica con
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-ocean">
-                InduGestor
-              </span>
-    
-            </h1>
-
-            <p class="mt-4 text-white/80 text-lg leading-relaxed">
-              Integramos PLC/SCADA, diseñamos terminales de piso y portales web con analítica
-              para llevar tu operación a nivel <em>Industria 4.0.</em>
-            </p>
-
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#contacto"
-                 class="rounded-xl bg-primary px-5 py-3 text-deep font-semibold hover:bg-primaryDark transition shadow-soft">
-                Ver Demo
-              </a>
-              <a href="#servicios"
-                 class="rounded-xl border border-white/15 bg-transparent px-5 py-3 text-white hover:bg-white/5 transition">
-                Ver servicios
-              </a>
-            </div>
-          </div>
-
-          <!-- Slide 2: AutoInventory -->
-          <div class="hero-slide" data-slide="1">
-            <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1a253a] px-3 py-1 text-xs text-white/80 shadow-soft">
-              <span class="h-2 w-2 rounded-full bg-primary"></span>
-              Plataforma de Gestión Vehicular
-            </span>
-
-            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-              Simplifica la gestión de vehículos con
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-ocean">
-                AutoInventory
-              </span>
-            </h1>
-
-            <p class="mt-4 text-white/80 text-lg leading-relaxed">
-              Controla inventario, clientes y procesos de venta desde una plataforma moderna y
-              escalable para concesionarios y compra y venta de vehículos.
-            </p>
-
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#contacto"
-                 class="rounded-xl bg-primary px-5 py-3 text-deep font-semibold hover:bg-primaryDark transition shadow-soft">
-                Ver Demo
-              </a>
-              <a href="#proyectos"
-                 class="rounded-xl border border-white/15 bg-transparent px-5 py-3 text-white hover:bg-white/5 transition">
-                Ver proyecto
-              </a>
-            </div>
-          </div>
-
-          <!-- slider controls -->
-          <div class="mt-6 flex items-center gap-3 text-xs text-white/60 select-none">
-            <button id="prevSlide"
-              class="rounded-lg border border-white/20 bg-white/5 px-2 py-1 hover:bg-white/10 transition"
-              aria-label="Anterior">
-              ❮
-            </button>
-            <button id="nextSlide"
-              class="rounded-lg border border-white/20 bg-white/5 px-2 py-1 hover:bg-white/10 transition"
-              aria-label="Siguiente">
-              ❯
-            </button>
-
-            <div class="flex items-center gap-2 ml-4">
-              <span class="indicator block h-2 w-2 rounded-full bg-white/30 ring-2 ring-transparent"></span>
-              <span class="indicator block h-2 w-2 rounded-full bg-white/30 ring-2 ring-transparent"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT SIDE: static feature cards -->
-        <div class="rounded-xl3 border border-cardBorder bg-cardSurface/60 shadow-soft backdrop-blur-sm p-4 sm:p-5 lg:ml-auto lg:max-w-[420px] w-full">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
-              <h3 class="font-semibold text-white">Terminal de Piso</h3>
-              <p class="text-sm text-white/70 mt-1 leading-relaxed">
-                .NET MAUI / Blazor Hybrid con login, órdenes y trazabilidad.
-              </p>
-            </div>
-
-            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
-              <h3 class="font-semibold text-white">Portal Admin</h3>
-              <p class="text-sm text-white/70 mt-1 leading-relaxed">
-                Django + Tailwind para catálogos, KPIs y auditoría.
-              </p>
-            </div>
-
-            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
-              <h3 class="font-semibold text-white">Conectores PLC con protocolo de comunicación</h3>
-              <p class="text-sm text-white/70 mt-1 leading-relaxed">
-                Python (pymcprotocol / pylogix)
-              </p>
-            </div>
-
-            <div class="rounded-xl border border-cardBorder bg-[#1a253a]/40 p-4 shadow-inner">
-              <h3 class="font-semibold text-white">Analytics & BI</h3>
-              <p class="text-sm text-white/70 mt-1 leading-relaxed">
-                Dashboards de calidad, consumo y OEE.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- grid -->
-    </div> <!-- container -->
-  </section>
 
   <!-- SERVICIOS -->
   <section id="servicios" class="py-10">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-xl font-semibold text-white mb-4">Servicios</h2>
-      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm leading-relaxed">
-        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
-          <div class="font-semibold text-white">MES — InduGestor</div>
-          <p class="text-white/70 mt-2">
-            Ejecución de Manufactura modular, terminales de piso, trazabilidad, parámetros de calidad y
-            sincronización nube.
-          </p>
+    <div class="mx-auto w-[95%] px-4">
+      <h2 class="text-3xl font-bold text-[#12D6D0] mb-8 text-center">Servicios</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">MES — InduGestor</h3>
+          <p class="text-white/70">Ejecución de Manufactura modular, terminales de piso, trazabilidad y sincronización con la nube.</p>
         </div>
-        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
-          <div class="font-semibold text-white">Software a medida</div>
-          <p class="text-white/70 mt-2">
-            Backends Django, Tailwind, PostgreSQL y .NET MAUI para apps robustas, seguras y escalables.
-          </p>
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">Software a medida</h3>
+          <p class="text-white/70">Backends Django, Tailwind, PostgreSQL y .NET MAUI para soluciones seguras y escalables.</p>
         </div>
-        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
-          <div class="font-semibold text-white">Integraciones OT/IT</div>
-          <p class="text-white/70 mt-2">
-            Lectura de tags por medio de I/O server para análisis de datos en Power BI.
-          </p>
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">Integraciones OT/IT</h3>
+          <p class="text-white/70">Lectura de tags desde PLC/SCADA para analítica en Power BI.</p>
+        </div>
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">Automatización & IoT</h3>
+          <p class="text-white/70">Integración de sensores, PLCs y nube para sistemas MES inteligentes.</p>
         </div>
       </div>
     </div>
@@ -309,231 +163,217 @@
 
   <!-- TECNOLOGÍAS -->
   <section id="tecnologias" class="py-10">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-xl font-semibold text-white mb-4">Tecnologías</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 text-xs">
+    <div class="mx-auto w-[95%] px-4">
+      <h2 class="text-3xl font-bold text-[#12D6D0] mb-8 text-center">Tecnologías</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7 gap-4 text-xs">
         <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">Django</span>
         <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">TailwindCSS</span>
         <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">PostgreSQL</span>
         <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">.NET MAUI</span>
-        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">Microsoft Power BI</span>
+        <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">Power BI</span>
         <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">Python</span>
         <span class="rounded-md border border-white/10 bg-[#1a253a]/40 px-4 py-2 text-center text-white/90">React JS</span>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS DESTACADOS -->
-  <section id="proyectos" class="py-10">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-xl font-semibold text-white mb-4">Proyectos destacados</h2>
-      <p class="text-white/70 text-sm mb-4">
-        Repositorios en GitHub creado por Nautilus Tech.
-      </p>
+ <!-- PROYECTOS EN SLICE -->
+<section id="proyectos" class="py-16 bg-[#0B1220] text-white relative overflow-hidden">
+  <h2 class="text-3xl font-bold text-center text-[#12D6D0] mb-12">Nuestros Proyectos</h2>
 
-      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm leading-relaxed">
-        <a href="https://github.com/jdarangom2012/AutoInventory-" target="_blank"
-           class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft hover:border-primary hover:shadow-glass transition">
-          <div class="text-primary font-semibold">AutoInventory</div>
-          <p class="text-white/70 mt-2">
-            Sistema de control de inventario y registro de compra/venta de vehículos.
-          </p>
-          <div class="text-xs text-white/60 mt-3">Ver en GitHub ↗</div>
-        </a>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <!-- Slider container -->
+    <div id="projectsSlider" class="flex gap-6 transition-transform duration-700 ease-in-out">
+      
+      <!-- InduGestor MES -->
+      <div class="flex-shrink-0 w-[300px] md:w-[360px] bg-[#111a2b] border border-white/10 rounded-xl p-6 shadow-glass">
+        <h3 class="text-xl font-semibold text-[#E8B923] mb-2">InduGestor MES</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Plataforma MES para control de producción industrial en tiempo real, trazabilidad e integración con PLC/SCADA.
+        </p>
+      </div>
 
-        <a href="https://github.com/jdarangom2012/minimarket-django" target="_blank"
-           class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft hover:border-primary hover:shadow-glass transition">
-          <div class="text-primary font-semibold">Minimarket Django</div>
-          <p class="text-white/70 mt-2">
-            Punto de venta (POS) con Django, control de stock y reportes.
-          </p>
-          <div class="text-xs text-white/60 mt-3">Ver en GitHub ↗</div>
-        </a>
+      <!-- AutoInventory -->
+      <div class="flex-shrink-0 w-[300px] md:w-[360px] bg-[#111a2b] border border-white/10 rounded-xl p-6 shadow-glass">
+        <h3 class="text-xl font-semibold text-[#E8B923] mb-2">AutoInventory</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Sistema de gestión para concesionarios y compraventas, con inventario, historial y control de ventas.
+        </p>
+      </div>
 
-        <a href="https://github.com/jdarangom2012/MesTostadoraLa-Central" target="_blank"
-           class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft hover:border-primary hover:shadow-glass transition">
-          <div class="text-primary font-semibold">MES Tostadora La Central</div>
-          <p class="text-white/70 mt-2">
-            Implementación MES real con lectura PLC, control de tueste y reportes SQL.
-          </p>
-          <div class="text-xs text-white/60 mt-3">Ver en GitHub ↗</div>
-        </a>
+      <!-- GlamFlow -->
+      <div class="flex-shrink-0 w-[300px] md:w-[360px] bg-[#111a2b] border border-white/10 rounded-xl p-6 shadow-glass">
+        <h3 class="text-xl font-semibold text-[#E8B923] mb-2">GlamFlow</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Asistente inteligente para salones de belleza y barberías. Agenda citas por WhatsApp y organiza la operación diaria.
+        </p>
+      </div>
+
+      <!-- Minimarket -->
+      <div class="flex-shrink-0 w-[300px] md:w-[360px] bg-[#111a2b] border border-white/10 rounded-xl p-6 shadow-glass">
+        <h3 class="text-xl font-semibold text-[#E8B923] mb-2">Minimarket</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Sistema de inventarios y punto de venta para minimercados, con control de stock y reportes diarios.
+        </p>
+      </div>
+
+      <!-- MES Tostadora -->
+      <div class="flex-shrink-0 w-[300px] md:w-[360px] bg-[#111a2b] border border-white/10 rounded-xl p-6 shadow-glass">
+        <h3 class="text-xl font-semibold text-[#E8B923] mb-2">MES Tostadora La Central</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Sistema MES especializado para procesos productivos de café, con lectura de PLC y curvas de tueste.
+        </p>
       </div>
     </div>
-  </section>
 
-  <!-- CASOS DE ÉXITO -->
-  <section id="casos" class="py-10">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-xl font-semibold text-white mb-4">Casos de éxito</h2>
-
-      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm leading-relaxed">
-        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
-          <div class="font-semibold text-white">Planta Alimentos</div>
-          <p class="text-white/70 mt-2">
-            Control de producción y reducción de desperdicios.
-          </p>
-        </div>
-
-        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
-          <div class="font-semibold text-white">Tostadora Café</div>
-          <p class="text-white/70 mt-2">
-            Curvas de tueste registradas automáticamente desde PLC.
-          </p>
-        </div>
-
-        <div class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft">
-          <div class="font-semibold text-white">Bebidas</div>
-          <p class="text-white/70 mt-2">
-            Integración SCADA–Postgres para control en tiempo real.
-          </p>
-        </div>
-      </div>
+    <!-- Controles -->
+    <div class="flex justify-center gap-4 mt-8">
+      <button id="prevSlide" class="p-2 border border-white/20 rounded-full hover:bg-white/10 text-lg">❮</button>
+      <button id="nextSlide" class="p-2 border border-white/20 rounded-full hover:bg-white/10 text-lg">❯</button>
     </div>
-  </section>
+  </div>
+
+  <script>
+    const slider = document.getElementById('projectsSlider');
+    const slides = slider.children.length;
+    let index = 0;
+
+    function updateSlide() {
+      const offset = index * 330; // controla la distancia (300 ancho + 30px gap)
+      slider.style.transform = `translateX(-${offset}px)`;
+    }
+
+    document.getElementById('nextSlide').addEventListener('click', () => {
+      index = (index + 1) % slides;
+      updateSlide();
+    });
+
+    document.getElementById('prevSlide').addEventListener('click', () => {
+      index = (index - 1 + slides) % slides;
+      updateSlide();
+    });
+
+    // Auto-slide cada 7 segundos
+    setInterval(() => {
+      index = (index + 1) % slides;
+      updateSlide();
+    }, 7000);
+  </script>
+</section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="py-10">
-    <div class="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-8">
+  <section id="contacto" class="relative py-20 bg-[#0B1220] text-white">
+    <div class="absolute inset-0 -z-10 opacity-25">
+      <div class="absolute -top-20 -left-32 h-96 w-96 rounded-full bg-primary blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-ocean blur-3xl"></div>
+    </div>
+
+    <div class="mx-auto w-[95%] px-6 md:px-12 grid lg:grid-cols-2 gap-10">
+      <!-- info -->
       <div>
-        <h2 class="text-xl font-semibold text-white mb-4">Conversemos</h2>
-        <p class="text-white/70 text-sm">
-          Cuéntanos tu caso y agenda una demo de InduGestor.
+        <h2 class="text-4xl font-bold text-[#12D6D0] mb-6">Conversemos 🤝</h2>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          ¿Tienes un proyecto o deseas agendar una demo de nuestras soluciones? Escríbenos y uno de nuestros socios te contactará.
         </p>
-        <ul class="mt-6 text-white/80 text-sm space-y-2">
-          <li>📧 jdarangom2012@gmail.com</li>
-          <li>📧 ivanhincapie@gmail.com</li>
-          <li>🌐 https://jdarangom2012.github.io/nautilus-tech-site/index</li>
+
+        <ul class="space-y-5 text-white/80">
+          <li class="flex flex-col gap-1">
+            <span class="text-white font-semibold">WhatsApp</span>
+            <a href="https://wa.me/573232341566?text=Hola%20Nautilus%20Tech%20👋" target="_blank" class="hover:text-[#12D6D0]">
+              📱 Juan David: +57 323 234 1566
+            </a>
+            <a href="https://wa.me/573147894556?text=Hola%20Nautilus%20Tech%20👋" target="_blank" class="hover:text-[#12D6D0]">
+              📱 Iván Hincapié: +57 314 789 4556
+            </a>
+          </li>
+          <li>
+            <span class="text-white font-semibold">Correos</span>
+            <div class="text-sm mt-2 space-y-1">
+              <a href="mailto:jdarangom2012@gmail.com" class="hover:text-[#12D6D0]">📧 jdarangom2012@gmail.com</a><br>
+              <a href="mailto:ivanhincapie@gmail.com" class="hover:text-[#12D6D0]">📧 ivanhincapie@gmail.com</a>
+            </div>
+          </li>
           <li>📍 Medellín, Colombia</li>
         </ul>
       </div>
 
-      <form class="rounded-md border border-white/10 bg-[#1a253a]/40 p-4 shadow-soft text-sm">
-        <input type="text" placeholder="Tu nombre"
-               class="w-full mb-3 rounded-md border border-white/20 bg-transparent px-3 py-2 text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
-        <input type="email" placeholder="Correo electrónico"
-               class="w-full mb-3 rounded-md border border-white/20 bg-transparent px-3 py-2 text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
-        <textarea rows="4" placeholder="Cuéntanos sobre tu proyecto..."
-                  class="w-full mb-3 rounded-md border border-white/20 bg-transparent px-3 py-2 text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none"></textarea>
-        <button
-          class="w-full rounded-md bg-primary px-5 py-2.5 text-deep font-semibold hover:bg-primaryDark transition">
-          Enviar
+      <!-- formulario -->
+      <form action="https://formspree.io/f/your-form-id" method="POST"
+            class="bg-[#1a253a]/60 border border-white/10 rounded-2xl shadow-glass p-8 text-sm backdrop-blur-sm">
+        <h3 class="text-2xl font-semibold text-[#E8B923] mb-6">Escríbenos un mensaje</h3>
+
+        <input type="text" name="nombre" placeholder="Tu nombre" required
+               class="w-full mb-4 rounded-md border border-white/20 bg-transparent px-4 py-2 text-white placeholder-white/40 focus:border-[#12D6D0] focus:ring-1 focus:ring-[#12D6D0] outline-none">
+        <input type="email" name="correo" placeholder="Correo electrónico" required
+               class="w-full mb-4 rounded-md border border-white/20 bg-transparent px-4 py-2 text-white placeholder-white/40 focus:border-[#12D6D0] focus:ring-1 focus:ring-[#12D6D0] outline-none">
+        <textarea name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required
+                  class="w-full mb-4 rounded-md border border-white/20 bg-transparent px-4 py-2 text-white placeholder-white/40 focus:border-[#12D6D0] focus:ring-1 focus:ring-[#12D6D0] outline-none"></textarea>
+
+        <button type="submit"
+                class="w-full rounded-md bg-[#12D6D0] px-5 py-2.5 text-[#0B1220] font-semibold hover:bg-[#0FBFB9] transition shadow-soft">
+          Enviar mensaje
         </button>
+        <p class="text-xs text-white/50 mt-3">
+          Al enviar este formulario, aceptas ser contactado por el equipo de Nautilus Tech.
+        </p>
       </form>
     </div>
   </section>
 
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <div id="whatsapp-float" class="fixed bottom-8 right-6 z-50">
+    <button id="toggleWhatsappMenu"
+            class="bg-[#12D6D0] p-4 rounded-full shadow-lg hover:bg-[#0FBFB9] transition flex items-center justify-center"
+            aria-label="Contactar por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+           class="h-6 w-6 text-[#0B1220]">
+        <path d="M12 2C6.48 2 2 6.07 2 10.93c0 1.9.64 3.72 1.83 5.26L2 22l6.04-1.76a9.8 9.8 0 0 0 3.96.85c5.52 0 10-4.07 10-8.93S17.52 2 12 2zm0 16.5c-1.27 0-2.5-.27-3.63-.8l-.26-.13-3.58 1.05 1.06-3.35-.21-.27A7.24 7.24 0 0 1 4.5 10.9c0-3.86 3.37-7 7.5-7s7.5 3.14 7.5 7-3.37 7-7.5 7z" />
+      </svg>
+    </button>
+
+    <div id="whatsappMenu"
+         class="hidden flex-col absolute bottom-16 right-0 mb-2 bg-[#1a253a]/95 border border-white/10 rounded-xl shadow-xl overflow-hidden backdrop-blur-sm animate-fade-in w-60">
+      <div class="text-xs text-white/60 px-4 py-2 border-b border-white/10">¿Con quién deseas hablar?</div>
+      <a href="https://wa.me/573232341566?text=Hola%20Juan%20David%20👋%20quiero%20más%20información%20sobre%20Nautilus%20Tech"
+         target="_blank"
+         class="px-4 py-3 text-sm text-white/90 hover:bg-[#12D6D0]/20 border-b border-white/10 flex items-center gap-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="h-4 w-4" /> Juan David
+      </a>
+      <a href="https://wa.me/573147894556?text=Hola%20Iván%20👋%20quiero%20más%20información%20sobre%20Nautilus%20Tech"
+         target="_blank"
+         class="px-4 py-3 text-sm text-white/90 hover:bg-[#12D6D0]/20 flex items-center gap-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="h-4 w-4" /> Iván Hincapié
+      </a>
+    </div>
+  </div>
+
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 py-10 text-xs text-white/60">
-    <div class="mx-auto max-w-7xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <footer class="border-t border-white/10 py-10 text-xs text-white/60 mt-10">
+    <div class="mx-auto w-[95%] px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2 font-semibold text-white">
-        <img src="img/LogoNautilusTech.png" alt="Nautilus Tech" class="h-6 w-auto rounded-lg" />
+        <img src="img/LogoNautilusTech.png" alt="Logo Nautilus Tech - Innovación Industrial" class="h-6 w-auto rounded-lg" />
         <span>Nautilus Tech</span>
       </div>
-      <p>© <span id="year"></span> Nautilus Tech. Todos los derechos reservados.</p>
-      <div>Hecho con Django + Tailwind + Postgres</div>
+      <p>© <span id="year"></span> Nautilus Tech — Industria 4.0 y Software Inteligente.</p>
+      <div>Medellín — Colombia</div>
     </div>
   </footer>
 
   <!-- SCRIPTS -->
   <script>
-    // mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // footer year
-    const yEl = document.getElementById('year');
-    if (yEl) { yEl.textContent = new Date().getFullYear(); }
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // HERO SLIDER LOGIC
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const indicators = document.querySelectorAll('.indicator');
-
-    let currentSlide = 0;
-    let slideInterval = null;
-    const SLIDE_TIME = 6000; // ms
-
-    function setActiveSlide(index) {
-      heroSlides.forEach((slide, i) => {
-        if (i === index) {
-          slide.classList.add('active');
-          slide.classList.remove('inactive-left');
-        } else {
-          // decide direction for exit animation
-          if (i < index) {
-            slide.classList.remove('active');
-            slide.classList.add('inactive-left');
-          } else {
-            slide.classList.remove('active','inactive-left');
-          }
-        }
-      });
-
-      indicators.forEach((dot, i) => {
-        if (i === index) {
-          dot.classList.add('bg-primary', 'ring-primary');
-          dot.classList.remove('bg-white/30', 'ring-transparent');
-        } else {
-          dot.classList.remove('bg-primary', 'ring-primary');
-          dot.classList.add('bg-white/30', 'ring-transparent');
-        }
-      });
-
-      currentSlide = index;
-    }
-
-    function nextHeroSlide() {
-      const next = (currentSlide + 1) % heroSlides.length;
-      setActiveSlide(next);
-    }
-
-    function prevHeroSlide() {
-      const prev = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
-      setActiveSlide(prev);
-    }
-
-    function startAuto() {
-      stopAuto();
-      slideInterval = setInterval(nextHeroSlide, SLIDE_TIME);
-    }
-
-    function stopAuto() {
-      if (slideInterval) clearInterval(slideInterval);
-    }
-
-    // hook buttons
-    const nextBtn = document.getElementById('nextSlide');
-    const prevBtn = document.getElementById('prevSlide');
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        nextHeroSlide();
-        startAuto();
-      });
-    }
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        prevHeroSlide();
-        startAuto();
-      });
-    }
-
-    // hook indicators click
-    indicators.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        setActiveSlide(i);
-        startAuto();
-      });
+    const toggleBtn = document.getElementById('toggleWhatsappMenu');
+    const waMenu = document.getElementById('whatsappMenu');
+    toggleBtn.addEventListener('click', e => { e.stopPropagation(); waMenu.classList.toggle('hidden'); });
+    document.addEventListener('click', e => {
+      if (!waMenu.classList.contains('hidden') && !waMenu.contains(e.target) && !toggleBtn.contains(e.target)) waMenu.classList.add('hidden');
     });
-
-    // init
-    setActiveSlide(0);
-    startAuto();
   </script>
+
 </body>
 </html>
