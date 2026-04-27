@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nautilus Tech 🌊 | Innovación y Tecnología Industrial 4.0</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Nautilus Tech impulsa la transformación digital industrial con soluciones MES, automatización y analítica avanzada. Desde Medellín, conectamos planta, nube y datos en tiempo real.">
+  <meta name="keywords" content="Nautilus Tech, InduGestor, AutoInventory, GlamFlow, PosFacil, MES Tostadora, Industria 4.0, MES, automatización, SCADA, PLC, Python, Django, Power BI, Tailwind, Postgres">
+  <meta name="author" content="Nautilus Tech">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nautilustech.co/">
+  <meta property="og:title" content="Nautilus Tech 🌊 | Transformación Digital Industrial">
+  <meta property="og:description" content="Desarrollamos soluciones MES, automatización e inteligencia de datos para la industria. Conoce InduGestor, AutoInventory, GlamFlow y más.">
+  <meta property="og:image" content="https://nautilustech.co/img/og-logo-nautilus.png">
+  <meta property="og:site_name" content="Nautilus Tech">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nautilus Tech 🌊 | Transformación Digital Industrial">
+  <meta name="twitter:description" content="Soluciones industriales, MES, software e integración planta–nube.">
+  <meta name="twitter:image" content="https://nautilustech.co/img/og-logo-nautilus.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://nautilustech.co/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0B1220">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#12D6D0',
+            ocean: '#0EA5E9',
+            deep: '#0B1220',
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.35)',
+            glass: '0 10px 40px rgba(18,214,208,.12)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0B1220;
+      color: #fff;
+    }
+    h1, h2, h3, h4, h5, h6,
+    header nav a {
+      font-family: 'Orbitron', sans-serif;
+    }
+    #mobileMenu.hidden { display: none; }
+    @keyframes fade-in { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+    .animate-fade-in { animation: fade-in 0.25s ease-out; }
+
+    /* Evita que el botón flotante tape el texto del footer */
+footer {
+  padding-right: 90px; /* deja espacio visual a la derecha del texto */
+}
+@media (max-width: 640px) {
+  footer {
+    padding-right: 0; /* en móviles vuelve al padding normal */
+    padding-bottom: 80px; /* da aire para el botón */
+  }
+}
+  </style>
+</head>
+<body class="text-white antialiased">
+
+  <!-- HEADER -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0B1220]/80 backdrop-blur">
+    <div class="mx-auto w-[95%] px-4 flex h-16 items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="./img/LogoNautilusTech.png" alt="Logo Nautilus Tech - Innovación Industrial" class="h-8 w-auto rounded-xl shadow-glass" />
+        <span class="text-lg font-extrabold tracking-tight">Nautilus Tech</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+        <a href="#servicios" class="hover:text-primary transition">Servicios</a>
+        <a href="#tecnologias" class="hover:text-primary transition">Tecnologías</a>
+        <a href="#proyectos" class="hover:text-primary transition">Proyectos</a>
+        <a href="#equipo" class="hover:text-primary transition">Equipo</a>
+        <a href="#contacto" class="rounded-xl bg-primary px-4 py-2 font-semibold text-deep hover:bg-[#0FBFB9] transition">Contacto</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 hover:bg-white/5">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <!-- MENÚ MÓVIL -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-[#0B1220]/95">
+      <nav class="px-4 py-3 space-y-2 text-sm text-white/80">
+        <a href="#servicios" class="block px-3 py-2 rounded-lg hover:bg-white/5">Servicios</a>
+        <a href="#tecnologias" class="block px-3 py-2 rounded-lg hover:bg-white/5">Tecnologías</a>
+        <a href="#proyectos" class="block px-3 py-2 rounded-lg hover:bg-white/5">Proyectos</a>
+        <a href="#equipo" class="block px-3 py-2 rounded-lg hover:bg-white/5">Equipo</a>
+        <a href="#contacto" class="block px-3 py-2 rounded-lg bg-primary text-deep font-semibold hover:bg-[#0FBFB9] transition">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+<section class="pt-24 pb-10 text-center relative overflow-hidden">
+  <!-- fondos decorativos -->
+  <div class="absolute inset-0 -z-10 opacity-25 pointer-events-none">
+    <div class="absolute -top-32 -left-24 h-80 w-80 rounded-full bg-primary blur-3xl"></div>
+    <div class="absolute top-10 right-0 h-96 w-[36rem] rounded-full bg-ocean blur-3xl"></div>
+  </div>
+
+  <div class="mx-auto max-w-4xl px-6 animate-fade-in">
+    <h1 class="text-5xl font-extrabold text-white leading-tight mb-4">
+      Transformamos la industria con tecnología inteligente
+      <span class="text-[#12D6D0]">de Nautilus Tech</span>
+    </h1>
+    <p class="text-white/80 text-lg mb-6">
+      Soluciones MES, automatización y sistemas digitales diseñados por Nautilus Tech.
+    </p>
+    <a href="#contacto"
+       class="rounded-xl bg-primary px-6 py-3 text-deep font-semibold hover:bg-[#0FBFB9] transition">
+      Contáctanos
+    </a>
+  </div>
+</section>
+
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-10">
+    <div class="mx-auto w-[95%] px-4">
+      <h2 class="text-3xl font-bold text-[#12D6D0] mb-8 text-center">Servicios</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">MES — InduGestor</h3>
+          <p class="text-white/70">Ejecución de Manufactura modular, terminales de piso, trazabilidad y sincronización con la nube.</p>
+        </div>
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">Software a medida</h3>
+          <p class="text-white/70">Backends Django, Tailwind, PostgreSQL y .NET MAUI para soluciones seguras y escalables.</p>
+        </div>
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">Integraciones OT/IT</h3>
+          <p class="text-white/70">Lectura de tags desde PLC/SCADA para analítica en Power BI.</p>
+        </div>
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-xl p-6 shadow-glass">
+          <h3 class="text-[#E8B923] font-semibold text-xl mb-2">Automatización & IoT</h3>
+          <p class="text-white/70">Integración de sensores, PLCs y nube para sistemas MES inteligentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS -->
+  <section id="tecnologias" class="py-10">
+    <div class="mx-auto w-[95%] px-4">
+      <h2 class="text-3xl font-bold text-[#12D6D0] mb-8 text-center">Tecnologías</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+        <!-- Django -->
+        <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-[#1a253a]/40 px-4 py-4 hover:border-[#12D6D0]/40 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" class="h-8 w-8 invert" alt="Django"/>
+          <span class="text-xs text-white/80">Django</span>
+        </div>
+        <!-- TailwindCSS -->
+        <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-[#1a253a]/40 px-4 py-4 hover:border-[#12D6D0]/40 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="h-8 w-8" alt="TailwindCSS"/>
+          <span class="text-xs text-white/80">TailwindCSS</span>
+        </div>
+        <!-- PostgreSQL -->
+        <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-[#1a253a]/40 px-4 py-4 hover:border-[#12D6D0]/40 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="h-8 w-8" alt="PostgreSQL"/>
+          <span class="text-xs text-white/80">PostgreSQL</span>
+        </div>
+        <!-- .NET MAUI -->
+        <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-[#1a253a]/40 px-4 py-4 hover:border-[#12D6D0]/40 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" class="h-8 w-8" alt=".NET MAUI"/>
+          <span class="text-xs text-white/80">.NET MAUI</span>
+        </div>
+        <!-- Power BI -->
+        <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-[#1a253a]/40 px-4 py-4 hover:border-[#12D6D0]/40 transition">
+          <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="4" fill="#F2C811"/>
+            <rect x="6" y="14" width="4" height="12" rx="1" fill="#1A1A1A"/>
+            <rect x="14" y="10" width="4" height="16" rx="1" fill="#1A1A1A"/>
+            <rect x="22" y="6" width="4" height="20" rx="1" fill="#1A1A1A"/>
+          </svg>
+          <span class="text-xs text-white/80">Power BI</span>
+        </div>
+        <!-- Python -->
+        <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-[#1a253a]/40 px-4 py-4 hover:border-[#12D6D0]/40 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-8 w-8" alt="Python"/>
+          <span class="text-xs text-white/80">Python</span>
+        </div>
+        <!-- React -->
+        <div class="flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-[#1a253a]/40 px-4 py-4 hover:border-[#12D6D0]/40 transition">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-8 w-8" alt="React JS"/>
+          <span class="text-xs text-white/80">React JS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- PROYECTOS EN SLICE -->
+<section id="proyectos" class="py-16 bg-[#0B1220] text-white relative overflow-hidden">
+  <h2 class="text-3xl font-bold text-center text-[#12D6D0] mb-12">Nuestros Proyectos</h2>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    <!-- Slider container -->
+    <div id="projectsSlider" class="flex gap-6 transition-transform duration-700 ease-in-out">
+
+      <!-- AutoInventory -->
+      <div class="flex-shrink-0 w-[300px] md:w-[380px] bg-[#111a2b] border border-white/10 rounded-xl overflow-hidden shadow-glass">
+        <div class="relative">
+          <img src="./img/autoinventory.png" alt="AutoInventory" class="w-full h-44 object-cover object-top"/>
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">✅ En producción</span>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-[#12D6D0]/20 text-[#12D6D0] border border-[#12D6D0]/30">🎯 Demo disponible</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#E8B923] mb-2">AutoInventory</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Sistema de gestión para concesionarios y compraventas, con inventario, historial y control de ventas.
+          </p>
+        </div>
+      </div>
+
+      <!-- GlamFlow -->
+      <div class="flex-shrink-0 w-[300px] md:w-[380px] bg-[#111a2b] border border-white/10 rounded-xl overflow-hidden shadow-glass">
+        <div class="relative">
+          <img src="./img/glamflow.png" alt="GlamFlow" class="w-full h-44 object-cover object-top"/>
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">✅ En producción</span>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-[#12D6D0]/20 text-[#12D6D0] border border-[#12D6D0]/30">🎯 Demo disponible</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#E8B923] mb-2">GlamFlow</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Asistente inteligente para salones de belleza y barberías. Agenda citas por WhatsApp y organiza la operación diaria.
+          </p>
+        </div>
+      </div>
+
+      <!-- PosFacil -->
+      <div class="flex-shrink-0 w-[300px] md:w-[380px] bg-[#111a2b] border border-white/10 rounded-xl overflow-hidden shadow-glass">
+        <div class="relative">
+          <img src="./img/posfacil.png" alt="PosFacil" class="w-full h-44 object-cover object-top"/>
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">✅ En producción</span>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-[#12D6D0]/20 text-[#12D6D0] border border-[#12D6D0]/30">🎯 Demo disponible</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#E8B923] mb-2">PosFacil</h3>
+          <p class="text-white/70 text-sm leading-relaxed">
+            Sistema de inventarios y punto de venta para minimercados, con control de stock y reportes diarios.
+          </p>
+        </div>
+      </div>
+
+      <!-- AgroInduGestor -->
+      <div class="flex-shrink-0 w-[300px] md:w-[380px] bg-[#111a2b] border border-white/10 rounded-xl overflow-hidden shadow-glass">
+        <div class="relative">
+          <img src="./img/agroindugestor.png" alt="AgroInduGestor" class="w-full h-44 object-cover object-top"/>
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/30">✅ En producción</span>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-[#12D6D0]/20 text-[#12D6D0] border border-[#12D6D0]/30">🎯 Demo disponible</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-[#E8B923] mb-2">AgroInduGestor</h3>
+          <p class="text-[#D1D5DB] text-sm leading-relaxed">
+            Plataforma MES para la Transformación y Elaboración Agroindustrial, diseñada para pequeñas y medianas industrias que buscan optimizar sus procesos productivos, trazabilidad y control de planta.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <div class="flex justify-center gap-4 mt-8">
+      <button id="prevSlide" class="p-2 border border-white/20 rounded-full hover:bg-white/10 text-lg">❮</button>
+      <button id="nextSlide" class="p-2 border border-white/20 rounded-full hover:bg-white/10 text-lg">❯</button>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('projectsSlider');
+    const slides = slider.children.length;
+    let index = 0;
+
+    function getCardWidth() {
+      const card = slider.children[0];
+      return card.getBoundingClientRect().width + 24; // 24px = gap-6
+    }
+
+    function updateSlide() {
+      const offset = index * getCardWidth();
+      slider.style.transform = `translateX(-${offset}px)`;
+    }
+
+    document.getElementById('nextSlide').addEventListener('click', () => {
+      index = (index + 1) % slides;
+      updateSlide();
+    });
+
+    document.getElementById('prevSlide').addEventListener('click', () => {
+      index = (index - 1 + slides) % slides;
+      updateSlide();
+    });
+
+    // Auto-slide cada 7 segundos
+    setInterval(() => {
+      index = (index + 1) % slides;
+      updateSlide();
+    }, 7000);
+  </script>
+</section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="py-16 bg-[#0d1629]">
+    <div class="mx-auto w-[95%] px-4">
+      <h2 class="text-3xl font-bold text-[#12D6D0] mb-12 text-center">Nuestro Equipo</h2>
+      <div class="flex justify-center">
+        <div class="bg-[#1a253a]/60 border border-white/10 rounded-2xl p-8 shadow-glass flex flex-col items-center text-center max-w-xs">
+          <!-- Avatar con iniciales -->
+          <div class="h-20 w-20 rounded-full bg-gradient-to-br from-[#12D6D0] to-[#0EA5E9] flex items-center justify-center mb-4 shadow-glass">
+            <span class="text-2xl font-extrabold text-[#0B1220]">JD</span>
+          </div>
+          <h3 class="text-white font-bold text-lg">Juan David Arango</h3>
+          <span class="text-[#12D6D0] text-sm font-semibold mt-1">Co-fundador</span>
+          <p class="text-white/60 text-sm mt-3 leading-relaxed">
+            Arquitecto de software e industria 4.0. Especialista en sistemas MES, automatización industrial y desarrollo de plataformas digitales desde Medellín.
+          </p>
+          <a href="https://wa.me/573232341566?text=Hola%20Juan%20David%20👋%20quiero%20más%20información%20sobre%20Nautilus%20Tech"
+             target="_blank"
+             class="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#12D6D0]/10 border border-[#12D6D0]/30 px-4 py-2 text-sm text-[#12D6D0] hover:bg-[#12D6D0]/20 transition">
+            📱 Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="relative py-20 bg-[#0B1220] text-white">
+    <div class="absolute inset-0 -z-10 opacity-25">
+      <div class="absolute -top-20 -left-32 h-96 w-96 rounded-full bg-primary blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-ocean blur-3xl"></div>
+    </div>
+
+    <div class="mx-auto w-[95%] px-6 md:px-12 grid lg:grid-cols-2 gap-10">
+      <!-- info -->
+      <div>
+        <h2 class="text-4xl font-bold text-[#12D6D0] mb-6">Conversemos 🤝</h2>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          ¿Tienes un proyecto o deseas agendar una demo de nuestras soluciones? Escríbenos y uno de nuestros socios te contactará.
+        </p>
+
+        <ul class="space-y-5 text-white/80">
+          <li class="flex flex-col gap-1">
+            <span class="text-white font-semibold">WhatsApp</span>
+            <a href="https://wa.me/573232341566?text=Hola%20Nautilus%20Tech%20👋" target="_blank" class="hover:text-[#12D6D0]">
+              📱 Juan David: +57 323 234 1566
+            </a>
+          </li>
+          <li>
+            <span class="text-white font-semibold">Correo</span>
+            <div class="text-sm mt-2 space-y-1">
+              <a href="mailto:nautilustech.startup@gmail.com" class="hover:text-[#12D6D0]">📧 nautilustech.startup@gmail.com</a>
+            </div>
+          </li>
+          <li>📍 Medellín, Colombia</li>
+        </ul>
+      </div>
+
+      <!-- formulario -->
+       <form action="https://formspree.io/f/mrbolrvp" method="POST"
+      class="bg-[#1a253a]/60 border border-white/10 rounded-2xl shadow-glass p-8 text-sm backdrop-blur-sm">
+  <h3 class="text-2xl font-semibold text-[#E8B923] mb-6">Escríbenos un mensaje</h3>
+
+  <input type="text" name="nombre" placeholder="Tu nombre" required
+         class="w-full mb-4 rounded-md border border-white/20 bg-transparent px-4 py-2 text-white placeholder-white/40 focus:border-[#12D6D0] focus:ring-1 focus:ring-[#12D6D0] outline-none">
+  <input type="email" name="correo" placeholder="Correo electrónico" required
+         class="w-full mb-4 rounded-md border border-white/20 bg-transparent px-4 py-2 text-white placeholder-white/40 focus:border-[#12D6D0] focus:ring-1 focus:ring-[#12D6D0] outline-none">
+  <textarea name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required
+            class="w-full mb-4 rounded-md border border-white/20 bg-transparent px-4 py-2 text-white placeholder-white/40 focus:border-[#12D6D0] focus:ring-1 focus:ring-[#12D6D0] outline-none"></textarea>
+
+  <button type="submit"
+          class="w-full rounded-md bg-[#12D6D0] px-5 py-2.5 text-[#0B1220] font-semibold hover:bg-[#0FBFB9] transition shadow-soft">
+    Enviar mensaje
+  </button>
+  <p class="text-xs text-white/50 mt-3">
+    Al enviar este formulario, aceptas ser contactado por el equipo de Nautilus Tech.
+  </p>
+</form>
+
+
+    </div>
+  </section>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <div id="whatsapp-float" class="fixed bottom-8 right-6 z-50">
+    <button id="toggleWhatsappMenu"
+            class="bg-[#12D6D0] p-4 rounded-full shadow-lg hover:bg-[#0FBFB9] transition flex items-center justify-center"
+            aria-label="Contactar por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+           class="h-6 w-6 text-[#0B1220]">
+        <path d="M12 2C6.48 2 2 6.07 2 10.93c0 1.9.64 3.72 1.83 5.26L2 22l6.04-1.76a9.8 9.8 0 0 0 3.96.85c5.52 0 10-4.07 10-8.93S17.52 2 12 2zm0 16.5c-1.27 0-2.5-.27-3.63-.8l-.26-.13-3.58 1.05 1.06-3.35-.21-.27A7.24 7.24 0 0 1 4.5 10.9c0-3.86 3.37-7 7.5-7s7.5 3.14 7.5 7-3.37 7-7.5 7z" />
+      </svg>
+    </button>
+
+    <div id="whatsappMenu"
+         class="hidden flex-col absolute bottom-16 right-0 mb-2 bg-[#1a253a]/95 border border-white/10 rounded-xl shadow-xl overflow-hidden backdrop-blur-sm animate-fade-in w-60">
+      <div class="text-xs text-white/60 px-4 py-2 border-b border-white/10">¿Con quién deseas hablar?</div>
+      <a href="https://wa.me/573232341566?text=Hola%20Juan%20David%20👋%20quiero%20más%20información%20sobre%20Nautilus%20Tech"
+         target="_blank"
+         class="px-4 py-3 text-sm text-white/90 hover:bg-[#12D6D0]/20 flex items-center gap-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="h-4 w-4" /> Juan David
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-10 text-xs text-white/60 mt-10">
+    <div class="mx-auto w-[95%] px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 font-semibold text-white">
+        <img src="img/LogoNautilusTech.png" alt="Logo Nautilus Tech - Innovación Industrial" class="h-6 w-auto rounded-lg" />
+        <span>Nautilus Tech</span>
+      </div>
+      <p>© <span id="year"></span> Nautilus Tech — Industria 4.0 y Software Inteligente.</p>
+      <div>Medellín — Colombia</div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggleBtn = document.getElementById('toggleWhatsappMenu');
+    const waMenu = document.getElementById('whatsappMenu');
+    toggleBtn.addEventListener('click', e => { e.stopPropagation(); waMenu.classList.toggle('hidden'); });
+    document.addEventListener('click', e => {
+      if (!waMenu.classList.contains('hidden') && !waMenu.contains(e.target) && !toggleBtn.contains(e.target)) waMenu.classList.add('hidden');
+    });
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form[action*='formspree.io']");
+  const successMessage = document.createElement("p");
+  successMessage.className = "text-sm text-[#12D6D0] mt-4 hidden";
+  successMessage.textContent = "✅ ¡Gracias! Tu mensaje fue enviado correctamente.";
+  form.appendChild(successMessage);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { Accept: "application/json" }
+    });
+
+    if (response.ok) {
+      form.reset();
+      successMessage.classList.remove("hidden");
+      setTimeout(() => successMessage.classList.add("hidden"), 6000);
+    } else {
+      alert("❌ Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

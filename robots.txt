@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
+Sitemap: https://jdarangom2012.github.io/nautilus-tech-site/sitemap.xml
