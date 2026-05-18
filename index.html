@@ -350,8 +350,7 @@ footer {
 </nav>
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+  <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
   <div class="hero-content">
     <div class="hero-badge">Startup tech · Medellín, Colombia</div>
     <h1>Software que impulsa <span>tu negocio</span><br>al siguiente nivel</h1>
@@ -503,3 +502,139 @@ footer {
 
 </body>
 </html>
+<script>
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+
+function resize() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const CYAN = '#00E5CC';
+const CYAN_DIM = 'rgba(0,229,204,';
+
+// Particles
+const particles = [];
+const COUNT = 80;
+
+for (let i = 0; i < COUNT; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4,
+    r: Math.random() * 2 + 1,
+    alpha: Math.random() * 0.5 + 0.2
+  });
+}
+
+// Circuit nodes
+const nodes = [];
+const NODE_COUNT = 12;
+for (let i = 0; i < NODE_COUNT; i++) {
+  nodes.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    pulse: Math.random() * Math.PI * 2
+  });
+}
+
+function drawCircuit() {
+  // Draw connections between close nodes
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 250) {
+        const alpha = (1 - dist / 250) * 0.25;
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        // Right-angle circuit style
+        ctx.lineTo(nodes[i].x, nodes[j].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.strokeStyle = CYAN_DIM + alpha + ')';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+    }
+  }
+
+  // Draw nodes
+  nodes.forEach(n => {
+    n.pulse += 0.02;
+    const size = 3 + Math.sin(n.pulse) * 1.5;
+    const alpha = 0.4 + Math.sin(n.pulse) * 0.2;
+
+    // Outer ring
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, size + 4, 0, Math.PI * 2);
+    ctx.strokeStyle = CYAN_DIM + (alpha * 0.3) + ')';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Inner dot
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, size, 0, Math.PI * 2);
+    ctx.fillStyle = CYAN_DIM + alpha + ')';
+    ctx.fill();
+  });
+}
+
+function drawParticles() {
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+
+    // Connect close particles
+    particles.forEach(p2 => {
+      const dx = p.x - p2.x;
+      const dy = p.y - p2.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.strokeStyle = CYAN_DIM + ((1 - dist / 120) * 0.15) + ')';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    });
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = CYAN_DIM + p.alpha + ')';
+    ctx.fill();
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Dark gradient background
+  const grad = ctx.createRadialGradient(
+    canvas.width / 2, 0, 0,
+    canvas.width / 2, canvas.height / 2, canvas.width
+  );
+  grad.addColorStop(0, 'rgba(0,229,204,0.08)');
+  grad.addColorStop(0.5, 'rgba(11,22,40,0.95)');
+  grad.addColorStop(1, 'rgba(6,13,24,1)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  drawCircuit();
+  drawParticles();
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
